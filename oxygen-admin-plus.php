@@ -3,7 +3,7 @@
  * Plugin Name: Oxygen 2.0 Admin Plus
  * Plugin URI: http://www.badabing.nl
  * Description: Enhances Oxygenbuilder 2.0 Dashboard
- * Version: 1.0
+ * Version: 1.0.1
  * Author: Didou Schol
  * Domain Path: languages/
  * Text Domain: oxygen-admin-plus
@@ -13,9 +13,9 @@
 define( 'OXYGENADMINPLUS_URL' 		, plugins_url( '/', __FILE__ ) );
 
 // load the files
-load_includes();
+oaplus_load_includes();
 
-function load_includes() {
+function oaplus_load_includes() {
 	$load_files = array(
 					'includes/oxygenbuilder2_add_columns_in_dash.php',
 					'includes/oxygenbuilder2_add_row_buttons.php',
