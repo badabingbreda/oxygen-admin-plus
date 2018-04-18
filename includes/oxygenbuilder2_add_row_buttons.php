@@ -42,7 +42,7 @@ add_action( 'current_screen' , 'add_remove_oxygen_options', 10, 1);
 
 function add_remove_oxygen_options() {
 
-	if (!get_option('ct_control_removeoxsc')) return;
+	if (!get_option('oadminplus_removeoxsc')) return;
 
 	$current_screen = get_current_screen();
 	// return early of on ct_template admin-page.

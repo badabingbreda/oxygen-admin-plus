@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Oxygen Admin Plus
+ * Plugin Name: Oxygen 2.0 Admin Plus
  * Plugin URI: http://www.badabing.nl
- * Description: Enhanced Oxygenbuilder 2.0 Admin panels
+ * Description: Enhances Oxygenbuilder 2.0 Dashboard
  * Version: 1.0
  * Author: Didou Schol
  * Domain Path: languages/
@@ -34,10 +34,21 @@ function oaplus_check_options() {
 
 	// if this is the first time we're running the plugin
 	// just assume we want to use it because we activated the plugin
-	if ( !get_option('ct_control_post_types') ) update_option( 'ct_control_post_types', array('post', 'page', 'ct_template'));
-	if ( !get_option('ct_control_add_columns') ) update_option( 'ct_control_add_columns', true);
-	if ( !get_option('ct_control_removeoxsc') ) update_option( 'ct_control_removeoxsc', true);
+	if ( !get_option('oadminplus_post_types') ) update_option( 'oadminplus_post_types', array('post', 'page', 'ct_template'));
+	if ( !get_option('oadminplus_add_columns') ) update_option( 'oadminplus_add_columns', true);
+	if ( !get_option('oadminplus_removeoxsc') ) update_option( 'oadminplus_removeoxsc', true);
 
 }
+
+/**
+ * Load the Github Updater
+ */
+if( ! class_exists( 'Smashing_Updater' ) ){
+	include_once( plugin_dir_path( __FILE__ ) . 'updater.php' );
+}
+$updater = new Smashing_Updater( __FILE__ );
+$updater->set_username( 'badabingbreda' );
+$updater->set_repository( 'oxygen-admin-plus' );
+$updater->initialize();
 
 

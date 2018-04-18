@@ -9,7 +9,7 @@ add_action('admin_menu' , 'add_oplus_admin_page');
  */
 function add_oplus_admin_page() {
 
-	if ( get_option('ct_control_post_types') ) add_filter( 'ct_post_types', 'get_options_fixed_post_types' , 90 ,1 );
+	if ( get_option('oadminplus_post_types') ) add_filter( 'ct_post_types', 'get_options_fixed_post_types' , 90 ,1 );
 
 	add_submenu_page( 	'options-general.php',
 						__('Oxygen Admin Plus', 'oxygen-admin-plus'),
@@ -21,7 +21,7 @@ function add_oplus_admin_page() {
 
 function get_options_fixed_post_types( $post_types ) {
 	// forget about previous settings, just use these instead
-	return ( is_array( get_option('ct_control_post_types') )? get_option('ct_control_post_types') : array() );
+	return ( is_array( get_option('oadminplus_post_types') )? get_option('oadminplus_post_types') : array() );
 }
 
 // main display callback
@@ -40,7 +40,7 @@ function oplus_settings_callback() {
 <?php
 		$post_types 	= 	get_post_types ( array( 'public' => true ), 'objects' );
 
-		$options_post_types = get_option( 'ct_control_post_types' );
+		$options_post_types = get_option( 'oadminplus_post_types' );
 
 	foreach ($post_types as $post_type) :
 		// skip the attachment post_type
@@ -57,11 +57,11 @@ function oplus_settings_callback() {
 				</tr>
 				<tr valign="top">
 					<th scope="row"><?php _e('include "Remove Oxygen Contents" button on Row Actions', 'oxygen-admin-plus'); ?></th>
-					<td><input type="checkbox" value="add" name="add_remove_oxsc" id="add_remove_oxsc" <?php checked( get_option('ct_control_removeoxsc') ); ?>></td>
+					<td><input type="checkbox" value="add" name="add_remove_oxsc" id="add_remove_oxsc" <?php checked( get_option('oadminplus_removeoxsc') ); ?>></td>
 				</tr>
 				<tr valign="top">
 					<th scope="row"><?php _e('Add columns "Apply To" and "In Use" on Templates overview', 'oxygen-admin-plus'); ?></th>
-					<td><input type="checkbox" value="add" name="add_columns" id="add_columns" <?php checked( get_option('ct_control_add_columns') ); ?>></td>
+					<td><input type="checkbox" value="add" name="add_columns" id="add_columns" <?php checked( get_option('oadminplus_add_columns') ); ?>></td>
 				</tr>
 			</table>
         <?php submit_button(); ?>
@@ -81,18 +81,18 @@ function cl_update_oplus_options() {
 	if (isset($_POST['post_types'])):
 		if (is_array($_POST['post_types'])):
 			$post_types = json_encode( $_POST['post_types']);
-			update_option( 'ct_control_post_types' , $_POST['post_types']);
+			update_option( 'oadminplus_post_types' , $_POST['post_types']);
 		endif;
 	else:
-		update_option( 'ct_control_post_types' , array());
+		update_option( 'oadminplus_post_types' , array());
 	endif;
 
-	update_option( 'ct_control_add_columns', 'add' == $_POST['add_columns'] );
+	update_option( 'oadminplus_add_columns', 'add' == $_POST['add_columns'] );
 
-	update_option( 'ct_control_removeoxsc', 'add' == $_POST['add_remove_oxsc'] );
+	update_option( 'oadminplus_removeoxsc', 'add' == $_POST['add_remove_oxsc'] );
 
 	// if ( isset($_POST['extra_post_types'])):
-	// 	update_option( 'ct_control_post_types' , $_POST['extra_post_types']);
+	// 	update_option( 'oadminplus_post_types' , $_POST['extra_post_types']);
 	// endif;
 
 	wp_redirect( add_query_arg(

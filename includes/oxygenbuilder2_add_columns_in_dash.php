@@ -5,7 +5,7 @@ add_action( 'plugins_loaded' , 'check_for_option_add_columns',10,1 );
 
 // check the option if we want to add the columns
 function check_for_option_add_columns() {
-	if ( get_option('ct_control_add_columns') ):
+	if ( get_option('oadminplus_add_columns') ):
 		add_filter('manage_edit-ct_template_columns', 'add_new_ct_template_columns');
 		// Add to admin_init function
 		add_action('manage_ct_template_posts_custom_column', 'manage_ct_template_columns', 10, 2);

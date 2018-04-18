@@ -2,9 +2,9 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: Oxygen Admin Plus\n"
-"POT-Creation-Date: 2018-04-18 15:22+0200\n"
-"PO-Revision-Date: 2018-04-18 15:20+0200\n"
+"Project-Id-Version: Oxygen 2.0 Admin Plus\n"
+"POT-Creation-Date: 2018-04-18 16:50+0200\n"
+"PO-Revision-Date: 2018-04-18 16:49+0200\n"
 "Last-Translator: Didou Schol <didou@badabing.nl>\n"
 "Language-Team: Didou Schol <didou@badabing.nl>\n"
 "MIME-Version: 1.0\n"
@@ -161,7 +161,6 @@ msgstr ""
 msgid "Edit with Oxygen"
 msgstr ""
 
-#. Plugin Name of the plugin/theme
 #: includes/oxygenbuilder2_plus_admin_options.php:15
 #: includes/oxygenbuilder2_plus_admin_options.php:16
 msgid "Oxygen Admin Plus"
@@ -187,13 +186,17 @@ msgstr ""
 msgid "Successfully updated."
 msgstr ""
 
+#. Plugin Name of the plugin/theme
+msgid "Oxygen 2.0 Admin Plus"
+msgstr ""
+
 #. Plugin URI of the plugin/theme
 #. Author URI of the plugin/theme
 msgid "http://www.badabing.nl"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Enhanced Oxygenbuilder 2.0 Admin panels"
+msgid "Enhances Oxygenbuilder 2.0 Dashboard"
 msgstr ""
 
 #. Author of the plugin/theme
