@@ -30,9 +30,9 @@ function oplus_settings_callback() {
         <div class="wrap">
         	<h2><?php echo __('Oxygen Admin Plus Settings', 'oxygen-admin-plus'); ?></h2>
 		<form method="post" action="options.php">
-		    <?php settings_fields( 'oplus-settings' ); ?>
+		    <?php settings_fields( 'oplus_settings' ); ?>
 		    <?php //do_settings_sections( 'selected_post_type' ); ?>
-			<?php wp_nonce_field( 'update'); ?>
+			<?php //wp_nonce_field( 'update_oadmin'); ?>
 			<table class="form-table">
 				<tr valign="top">
 					<th scope="row"><?php _e( 'Add Oxygen Plus Row Actions on these selected Post Types', 'oxygen-admin-plus' );?></th>
@@ -74,9 +74,12 @@ add_action( 'admin_action_update' , 'cl_update_oplus_options' );
 
 function cl_update_oplus_options() {
 
-	$nonce = $_GET['_wpnonce'];
+	//$nonce = $_GET['_wpnonce'];
 
-	wp_verify_nonce( $nonce, 'update' );
+	wp_verify_nonce( $nonce );
+
+	// bail out when we are not coming from the oplus_settings page
+	if ($_REQUEST['option_page'] !== 'oplus_settings' ) return;
 
 	if (isset($_POST['post_types'])):
 		if (is_array($_POST['post_types'])):

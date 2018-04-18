@@ -18,6 +18,10 @@ You can change the settings on the Settings > Oxygen Admin Plus page.
 ![enter image description here](https://lh3.googleusercontent.com/gSh2FfBOV9WVYii3KzKQ0-T7kHfcoVcenlusf6_2ZegoX7twVBZX5YpKqBF4dseJokV68SqhWJ9y)
 
 #### release history
+**1.0.2** (2018-04-18)
+
+ - fixed a bug on admin-page that interfered with other admin-pages
+
 **1.0.1** (2018-04-18)
 
  - changed the prefix on a function for future versions
