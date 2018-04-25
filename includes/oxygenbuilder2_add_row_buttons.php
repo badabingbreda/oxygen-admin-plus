@@ -148,7 +148,7 @@ function show_post_row_actions ( $actions , $post ) {
 
 	$color = ( array_key_exists( 'ct_builder_shortcodes', $meta) && $meta['ct_builder_shortcodes'][0]!=='' ) ?'green':'lightgrey';
 
-	$actions['oxygen'] = '<div style="display:inline-block;border:2px solid '.$color.';border-radius:50%;width:3px;height:3px;margin:2px;margin-right:5px;background-color:'.$color.';"></div><a href="'.get_permalink($post->ID).'?ct_builder=true">'.__('Edit with Oxygen', 'oxygen-admin-plus').'</a>';
+	$actions['oxygen'] = '<div style="display:inline-block;border:2px solid '.$color.';border-radius:50%;width:3px;height:3px;margin:2px;margin-right:5px;background-color:'.$color.';"></div><a href="'.get_permalink($post->ID).'?ct_builder=true&ct_inner=true">'.__('Edit with Oxygen', 'oxygen-admin-plus').'</a>';
 	//var_dump( $post);
 	return $actions;
 }
